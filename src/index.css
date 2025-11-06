@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0D0C0B;
+    color: #f5f5f5;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: 
+      radial-gradient(at 10% 10%, rgba(199, 70, 52, 0.08) 0px, transparent 50%),
+      radial-gradient(at 90% 90%, rgba(49, 45, 42, 0.12) 0px, transparent 50%);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: #ffffff;
+  }
+  
+  code {
+    font-family: "Fira Code", monospace;
+    background-color: #221F1D;
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.25rem;
+    color: #F0643B;
+    font-size: 0.875rem;
+  }
+  
+  pre {
+    font-family: "Fira Code", monospace;
+    background-color: #221F1D;
+    color: #f5f5f5;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    overflow-x: auto;
+    border: 1px solid #3A3532;
+  }
+
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    position: relative;
+    background: linear-gradient(135deg, #C74634 0%, #E05840 100%);
+    color: white;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px -5px rgba(199, 70, 52, 0.5);
+  }
+  
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #E05840 0%, #ED7563 100%);
+    box-shadow: 0 20px 40px -5px rgba(199, 70, 52, 0.6);
+    transform: translateY(-2px) scale(1.02);
+  }
+  
+  .btn-secondary {
+    position: relative;
+    background-color: #221F1D;
+    color: white;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+    border: 1px solid #3A3532;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #2A2724;
+    border-color: rgba(199, 70, 52, 0.5);
+  }
+  
+  .card-premium {
+    background-color: #221F1D;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    border: 1px solid #3A3532;
+    transition: all 0.5s ease;
+  }
+  
+  .card-premium:hover {
+    border-color: rgba(199, 70, 52, 0.6);
+    box-shadow: 0 25px 50px -12px rgba(199, 70, 52, 0.3);
+    transform: translateY(-0.5rem);
+  }
+  
+  .card-glass {
+    background-color: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(40px);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    border: 1px solid rgba(199, 70, 52, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .card-glass:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(199, 70, 52, 0.4);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, #C74634 0%, #F0643B 50%, #FACD62 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .gradient-text-alt {
+    background: linear-gradient(135deg, #FACD62 0%, #C74634 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .oracle-glow {
+    box-shadow: 0 0 30px rgba(199, 70, 52, 0.4), 0 0 60px rgba(199, 70, 52, 0.2);
+  }
+  
+  .section-container {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  
+  @media (min-width: 640px) {
+    .section-container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .section-container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      padding-top: 8rem;
+      padding-bottom: 8rem;
+    }
+  }
+  
+  .interactive-card {
+    cursor: pointer;
+    transform-origin: center;
+    transition: all 0.3s ease;
+  }
+  
+  .interactive-card:hover {
+    transform: scale(1.02);
+  }
+}
+
+/* Custom Scrollbar - Oracle Red */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0D0C0B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #C74634 0%, #312D2A 100%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #E05840 0%, #4A4540 100%);
+}
+
+/* Selection - Oracle Red */
+::selection {
+  background: rgba(199, 70, 52, 0.4);
+  color: white;
+}
