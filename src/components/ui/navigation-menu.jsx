@@ -6,10 +6,7 @@ import { cn } from "../../lib/utils"
 const NavigationMenu = React.forwardRef(({ className, children, ...props }, ref) => (
   <NavigationMenuPrimitive.Root
     ref={ref}
-    className={cn(
-      "relative z-10 flex max-w-max flex-1 items-center justify-center",
-      className
-    )}
+    className={cn("relative z-10 flex max-w-max flex-1 items-center justify-center", className)}
     {...props}
   >
     {children}
@@ -21,10 +18,7 @@ NavigationMenu.displayName = NavigationMenuPrimitive.Root.displayName
 const NavigationMenuList = React.forwardRef(({ className, ...props }, ref) => (
   <NavigationMenuPrimitive.List
     ref={ref}
-    className={cn(
-      "group flex flex-1 list-none items-center justify-center space-x-1",
-      className
-    )}
+    className={cn("group flex flex-1 list-none items-center justify-center space-x-1", className)}
     {...props}
   />
 ))
@@ -34,9 +28,10 @@ const NavigationMenuItem = NavigationMenuPrimitive.Item
 
 const navigationMenuTriggerStyle = cn(
   "group inline-flex h-10 w-max items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition-colors",
-  "hover:bg-dark-hover hover:text-white focus:bg-dark-hover focus:text-white focus:outline-none",
+  "hover:bg-gray-100 dark:hover:bg-dark-hover hover:text-gray-900 dark:hover:text-white",
+  "focus:bg-gray-100 dark:focus:bg-dark-hover focus:text-gray-900 dark:focus:text-white focus:outline-none",
   "disabled:pointer-events-none disabled:opacity-50",
-  "data-[active]:bg-dark-card data-[state=open]:bg-dark-hover"
+  "data-[active]:bg-gray-100 dark:data-[active]:bg-dark-card data-[state=open]:bg-gray-100 dark:data-[state=open]:bg-dark-hover"
 )
 
 const NavigationMenuTrigger = React.forwardRef(({ className, children, ...props }, ref) => (
@@ -77,7 +72,7 @@ const NavigationMenuViewport = React.forwardRef(({ className, ...props }, ref) =
     <NavigationMenuPrimitive.Viewport
       className={cn(
         "origin-top-center relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden",
-        "rounded-2xl border border-dark-border bg-dark-card shadow-2xl",
+        "rounded-2xl border border-gray-200 dark:border-dark-border bg-white dark:bg-dark-card shadow-xl",
         "data-[state=open]:animate-in data-[state=closed]:animate-out",
         "data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90",
         "md:w-[var(--radix-navigation-menu-viewport-width)]",
@@ -101,7 +96,7 @@ const NavigationMenuIndicator = React.forwardRef(({ className, ...props }, ref) 
     )}
     {...props}
   >
-    <div className="relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm bg-dark-border shadow-md" />
+    <div className="relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm bg-gray-200 dark:bg-dark-border shadow-md" />
   </NavigationMenuPrimitive.Indicator>
 ))
 NavigationMenuIndicator.displayName = NavigationMenuPrimitive.Indicator.displayName
